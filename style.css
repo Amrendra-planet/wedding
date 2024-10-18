@@ -1,0 +1,250 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('assets/udaipur-rajasthan-india.webp') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the full background */
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* General Section Styling */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background to improve text visibility */
+    margin: 10px 0;
+    border-radius: 15px; /* Rounded corners for a soft look */
+}
+
+h1, h2 {
+    color: #ff6b6b; /* Pastel red */
+    font-family: 'Georgia', serif;
+}
+
+/* Landing Section */
+#landing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 15px;
+    color: white;
+}
+
+.cta-btn {
+    background-color: #7dcea0; /* Pastel green */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #58d68d;
+}
+
+/* Bride and Groom Section */
+#bride-groom {
+    background-color: rgba(254, 249, 231, 0.9); /* Soft yellow with some transparency */
+    padding: 60px 0;
+}
+
+.couple-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.couple-container div {
+    width: 45%;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(249, 231, 159, 0.9); /* Light yellow with transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.couple-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.floating-animation {
+    animation: floating 5s infinite ease-in-out;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Event Details Section */
+#event-details {
+    background-color: rgba(234, 250, 241, 0.9); /* Light pastel green with transparency */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.details-container p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.countdown {
+    margin-top: 20px;
+}
+
+/* Gallery Section */
+#gallery {
+    background-color: rgba(240, 244, 248, 0.9); /* Soft blue with transparency */
+    padding: 60px 0;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery-item {
+    width: 250px;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Modal for Gallery */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.mySlides {
+    display: none;
+}
+
+.modal-content img {
+    max-width: 90%;
+    height: auto;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    padding: 16px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* RSVP Section */
+#rsvp {
+    background-color: rgba(249, 235, 234, 0.9); /* Soft pastel pink with transparency */
+    padding: 60px 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #f7dc6f; /* Light yellow */
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f1c40f;
+}
+
+/* Footer */
+footer {
+    background-color: #f39c12; /* Bright pastel yellow */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}

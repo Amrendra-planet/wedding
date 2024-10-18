@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation - Smita & Amrendra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <section id="landing">
+        <div class="banner">
+            <h1>You're Invited</h1>
+            <p>To the wedding of</p>
+            <h2>Smita Singh & Amrendra Pratap Singh</h2>
+            <p class="date">May 06, 2025</p>
+            <a href="#event-details" class="cta-btn">RSVP & Details</a>
+        </div>
+    </section>
+
+    <!-- Bride and Groom Section -->
+    <section id="bride-groom">
+        <h2>Meet the Couple</h2>
+        <div class="couple-container">
+            <div class="bride">
+                <img src="assets/dd5ae5cbab22b1ea80414bc01db2b486.jpg" alt="Smita Singh" class="floating-animation">
+                <h3>Smita Singh</h3>
+                <p>“A kind soul with a loving heart.”</p>
+            </div>
+            <div class="groom">
+                <img src="assets/c5f140b176854232e3337ec05c44b0fd.jpg" alt="Amrendra Pratap Singh" class="floating-animation">
+                <h3>Amrendra Pratap Singh</h3>
+                <p>“A noble man of honor and love.”</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section id="event-details">
+        <h2>Event Details</h2>
+        <div class="details-container">
+            <p>Date: <strong>May 06, 2025</strong></p>
+            <p>Time: <strong>8:00 PM</strong></p>
+            <p>Venue: <strong>The Grand Wedding Palace, New Delhi, India</strong></p>
+        </div>
+        <div class="countdown">
+            <h3>Countdown to the Big Day</h3>
+            <p id="countdown-timer"></p>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="assets/dd5ae5cbab22b1ea80414bc01db2b486.jpg" alt="Gallery Image 1" onclick="openModal();currentSlide(1)">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/c5f140b176854232e3337ec05c44b0fd.jpg" alt="Gallery Image 2" onclick="openModal();currentSlide(2)">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/dd5ae5cbab22b1ea80414bc01db2b486.jpg" alt="Gallery Image 3" onclick="openModal();currentSlide(3)">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/dd5ae5cbab22b1ea80414bc01db2b486.jpg" alt="Gallery Image 4" onclick="openModal();currentSlide(4)">
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp">
+        <h2>RSVP</h2>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" required>
+
+            <button type="submit">Submit RSVP</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Smita & Amrendra's Wedding</p>
+    </footer>
+
+    <!-- Modal for Gallery Lightbox -->
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div class="mySlides">
+                <img src="assets/dd5ae5cbab22b1ea80414bc01db2b486.jpg" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <img src="assets/c5f140b176854232e3337ec05c44b0fd.jpg" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <img src="assets/c5f140b176854232e3337ec05c44b0fd.jpg" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <img src="assets/dd5ae5cbab22b1ea80414bc01db2b486.jpg" style="width:100%">
+            </div>
+            <!-- Next/Previous Controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

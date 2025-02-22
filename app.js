@@ -31,33 +31,33 @@ function showSlides(n) {
 }
 
 
-document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+document.getElementById("rsvpForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent default form submission
 
     let googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSdIThbj6Opx3WcUiJKl7pn8WgsvOkbN4cKH08CBtsINRVlU0g/formResponse";
 
-    // Creating FormData object
-    let formData = new FormData();
-    formData.append("entry.1088334299", document.getElementById("name").value);
-    formData.append("entry.545143636", document.getElementById("number").value);
-    formData.append("entry.1231216061", document.getElementById("guests").value);
-    formData.append("entry.865025705", document.getElementById("role").value);
-    formData.append("entry.1884059398", document.getElementById("room").value);
+    // Capture form values
+    let name = document.getElementById("name").value;
+    let number = document.getElementById("number").value;
+    let guests = document.getElementById("guests").value;
+    let role = document.getElementById("role").value;
+    let room = document.getElementById("room").value;
 
-    // Using Axios to submit the form data
-    axios.post(googleFormURL, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-        mode: "no-cors"
-    })
-    .then(() => {
-        alert("🎉 RSVP Submitted Successfully!");
-        window.location.href = "thank-you.html"; // Redirect after submission
-    })
-    .catch(error => {
-        console.error("❌ Submission failed:", error);
-        alert("⚠️ Submission failed. Please try again.");
-    });
+    // Construct URL with query parameters
+    let formURL = `${googleFormURL}?entry.1088334299=${encodeURIComponent(name)}&entry.545143636=${encodeURIComponent(number)}&entry.1231216061=${encodeURIComponent(guests)}&entry.865025705=${encodeURIComponent(role)}&entry.1884059398=${encodeURIComponent(room)}`;
+
+    // Submit the form using Fetch (GET request)
+    fetch(formURL, { method: "GET", mode: "no-cors" })
+        .then(() => {
+            alert("🎉 RSVP Submitted Successfully!");
+            window.location.href = "thank-you.html"; // Redirect after submission
+        })
+        .catch(error => {
+            console.error("❌ Submission failed:", error);
+            alert("⚠️ Submission failed. Please try again.");
+        });
 });
+
 
 
 // Countdown Timer

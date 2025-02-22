@@ -658,3 +658,69 @@ form button:hover {
     }
 }
 
+/* General Styles */
+.couple-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Bride & Groom Boxes */
+.couple-container div {
+    width: 45%;
+    text-align: center;
+    padding: 1px;
+    background: rgba(249, 231, 159, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.couple-container div:hover {
+    transform: scale(1.05);
+}
+
+/* Bride & Groom Images */
+.couple-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.couple-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Floating Animation */
+@keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.floating-animation {
+    animation: floating 5s infinite ease-in-out;
+}
+
+/* 🎯 Responsive Design for Mobile Screens */
+@media screen and (max-width: 768px) {
+    .couple-container {
+        flex-direction: column; /* Stack bride & groom vertically */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .couple-container div {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .couple-container img {
+        width: 120px;
+        height: 120px;
+    }
+}

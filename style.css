@@ -248,3 +248,413 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
+/* RSVP Form Styling */
+#rsvp {
+    background: rgba(249, 235, 234, 0.95); /* Soft pastel pink background */
+    padding: 60px;
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9); /* White card effect */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels */
+form label {
+    font-size: 16px;
+    color: #5a3d5c; /* Deep purple shade */
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+/* Input Fields */
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #e0b0ff; /* Soft lavender border */
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Focus Effect */
+form input:focus, form select:focus {
+    border-color: #a569bd; /* Darker pastel purple on focus */
+    box-shadow: 0 0 8px rgba(165, 105, 189, 0.5);
+}
+
+/* Submit Button */
+form button {
+    width: 100%;
+    background: #d35400; /* Warm orange */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+form button:hover {
+    background: #e67e22; /* Softer orange */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
+    
+    form input, form select {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    form button {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+/* Animated Multicolor Background */
+#landing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1, #fccb90, #a1c4fd, #c2e9fb);
+    background-size: 500% 500%;
+    animation: gradientBG 12s infinite ease-in-out;
+}
+
+/* Smooth Gradient Transition */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Wedding Banner */
+.banner {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: #5a3d5c;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Headings */
+.banner h1 {
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;
+    color: #ff6b6b;
+}
+
+.banner h2 {
+    font-size: 35px;
+    font-family: 'Dancing Script', cursive;
+    color: #d35400;
+}
+
+.banner .date {
+    font-size: 22px;
+    font-weight: bold;
+    color: #8e44ad;
+}
+
+/* CTA Button */
+.cta-btn {
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 117, 140, 0.5);
+}
+
+/* Falling Flowers Effect */
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.flower {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('https://pngimg.com/uploads/rose/rose_PNG659.png'); /* Replace with actual flower image */
+    background-size: cover;
+    opacity: 0;
+    animation: fall 8s linear infinite;
+}
+
+/* Random flower positions */
+.flower:nth-child(1) { left: 5%; animation-delay: 0s; }
+.flower:nth-child(2) { left: 20%; animation-delay: 1s; }
+.flower:nth-child(3) { left: 40%; animation-delay: 2s; }
+.flower:nth-child(4) { left: 60%; animation-delay: 3s; }
+.flower:nth-child(5) { left: 80%; animation-delay: 4s; }
+.flower:nth-child(6) { left: 95%; animation-delay: 5s; }
+
+/* Popping Flowers Around Banner */
+.popping-flower {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://pngimg.com/uploads/rose/rose_PNG664.png'); /* Replace with actual flower image */
+    background-size: cover;
+    opacity: 0;
+    animation: pop 3s infinite ease-in-out;
+}
+
+/* Popping Effect */
+@keyframes pop {
+    0%, 100% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Flower positions */
+.popping-flower:nth-child(1) { top: 10%; left: 10%; animation-delay: 1s; }
+.popping-flower:nth-child(2) { top: 20%; right: 10%; animation-delay: 2s; }
+.popping-flower:nth-child(3) { bottom: 10%; left: 20%; animation-delay: 3s; }
+.popping-flower:nth-child(4) { bottom: 20%; right: 15%; animation-delay: 4s; }
+
+
+/* Bride and Groom Section */
+#bride-groom {
+    background: linear-gradient(135deg, #57bade, #6bc5d3, #2ba2c0); /* Soft romantic gradient */
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Floating flower animation */
+#bride-groom::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: url('assets/flower.png') no-repeat center/contain;
+    animation: floatFlowers 6s infinite linear alternate;
+    opacity: 0.5;
+}
+
+@keyframes floatFlowers {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(30px) rotate(15deg); }
+}
+
+/* Couple Section Styling */
+.couple-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.couple-container div {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for zoom animation */
+.couple-container div:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Bride & Groom Images */
+.couple-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Zoom effect on hover */
+.couple-container div:hover img {
+    transform: scale(1.1);
+}
+
+/* Floating Animation */
+.floating-animation {
+    animation: floating 4s infinite ease-in-out;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Bride & Groom Name Styling */
+.couple-container h3 {
+    font-size: 22px;
+    margin-top: 15px;
+    font-family: 'Dancing Script', cursive;
+    color: #fff8dc;
+}
+
+/* Quote Styling */
+.couple-container p {
+    font-size: 20px;
+    font-style: italic;
+    color: #000000;
+}
+
+/* Event Details Section */
+#event-details {
+    background: linear-gradient(135deg, #fad0c4, #ff9a9e, #fbc2eb); /* Soft pink & pastel tones */
+
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 40px auto;
+    position: relative;
+    color: white;
+}
+
+/* Floating Hearts Animation */
+#event-details::before {
+    content: "❤️";
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 24px;
+    animation: floatingHearts 5s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+#event-details::after {
+    content: "💖";
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 24px;
+    animation: floatingHearts 6s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+@keyframes floatingHearts {
+    0% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(-10px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.6; }
+}
+
+/* Details Container */
+.details-container {
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.details-container p {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Google Maps Link */
+.details-container a {
+    display: inline-block;
+    background-color: white;
+    color: #72bfe3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.details-container a:hover {
+    background-color: #82d8f5;
+    color: white;
+}
+
+/* Countdown Timer */
+.countdown {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.countdown h3 {
+    font-size: 22px;
+    color: #fff;
+}
+
+#countdown-timer {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ffeb3b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #event-details {
+        padding: 40px 15px;
+    }
+
+    .details-container, .countdown {
+        padding: 15px;
+    }
+
+    #countdown-timer {
+        font-size: 24px;
+    }
+}
+

@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation - Smita & Amrendra</title>
     <link rel="stylesheet" href="style.css">
+    <audio id="wedding-music" autoplay loop>
+        <!-- <source src="./Nils Frahm - You.mp3" type="audio/mpeg"> -->
+    </audio>
+    
 </head>
+
 <body>
     <!-- Landing Page -->
     <section id="landing">
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+
+        <div class="popping-flower"></div>
+        <div class="popping-flower"></div>
+        <div class="popping-flower"></div>
+        <div class="popping-flower"></div>
+
         <div class="banner">
             <h1>You're Invited</h1>
             <p>To the wedding of</p>
@@ -23,12 +41,12 @@
         <h2>Meet the Couple</h2>
         <div class="couple-container">
             <div class="bride">
-                <img src="dd5ae5cbab22b1ea80414bc01db2b486.jpg" alt="Smita Singh" class="floating-animation">
+                <img src="./bride.jpeg" alt="Smita Singh" class="floating-animation">
                 <h3>Smita Singh</h3>
                 <p>“A kind soul with a loving heart.”</p>
             </div>
             <div class="groom">
-                <img src="c5f140b176854232e3337ec05c44b0fd.jpg" alt="Amrendra Pratap Singh" class="floating-animation">
+                <img src="./groom.jpeg" alt="Amrendra Pratap Singh" class="floating-animation">
                 <h3>Amrendra Pratap Singh</h3>
                 <p>“A noble man of honor and love.”</p>
             </div>
@@ -41,29 +59,38 @@
         <div class="details-container">
             <p>Date: <strong>May 06, 2025</strong></p>
             <p>Time: <strong>8:00 PM</strong></p>
-            <p>Venue: <strong>The Grand Wedding Palace, New Delhi, India</strong></p>
+            <p>Venue: <strong>Shubhkamna Marriage Hall, Gorakhpur</strong></p>
+            <a href="https://www.google.com/maps?q=26.790001826535597,83.40015382427973" target="_blank">
+                Open Location in Google Maps
+            </a>
         </div>
-        <div class="countdown">
+    
+        <!-- <div class="countdown">
             <h3>Countdown to the Big Day</h3>
             <p id="countdown-timer"></p>
-        </div>
+        </div> -->
     </section>
+    
 
     <!-- Photo Gallery -->
     <section id="gallery">
         <h2>Photo Gallery</h2>
         <div class="gallery-container">
             <div class="gallery-item">
-                <img src="dd5ae5cbab22b1ea80414bc01db2b486.jpg" alt="Gallery Image 1" onclick="openModal();currentSlide(1)">
+                <img src="./couple1.jpeg" alt="Gallery Image 1"
+                    onclick="openModal();currentSlide(1)">
             </div>
             <div class="gallery-item">
-                <img src="c5f140b176854232e3337ec05c44b0fd.jpg" alt="Gallery Image 2" onclick="openModal();currentSlide(2)">
+                <img src="./couple2.jpeg" alt="Gallery Image 2"
+                    onclick="openModal();currentSlide(2)">
             </div>
             <div class="gallery-item">
-                <img src="dd5ae5cbab22b1ea80414bc01db2b486.jpg" alt="Gallery Image 3" onclick="openModal();currentSlide(3)">
+                <img src="./couple3.jpeg" alt="Gallery Image 3"
+                    onclick="openModal();currentSlide(3)">
             </div>
             <div class="gallery-item">
-                <img src="dd5ae5cbab22b1ea80414bc01db2b486.jpg" alt="Gallery Image 4" onclick="openModal();currentSlide(4)">
+                <img src="./couple4.jpeg" alt="Gallery Image 4"
+                    onclick="openModal();currentSlide(4)">
             </div>
         </div>
     </section>
@@ -71,22 +98,35 @@
     <!-- RSVP Section -->
     <section id="rsvp">
         <h2>RSVP</h2>
-        <form>
+        <form id="rsvpForm">
             <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="guests">Number of Guests:</label>
-            <input type="number" id="guests" name="guests" required>
+            <input type="text" id="name" name="name" maxlength="20" required>
 
-            <button type="submit">Submit RSVP</button>
+            <label for="number">Mobile Number:</label>
+            <input type="number" id="number" name="number" maxlength="10" required>
+
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" maxlength="1" required>
+
+            <label for="role">Groom or Bride:</label>
+            <select id="role" name="role" required>
+                <option value="Groom">Groom</option>
+                <option value="Bride">Bride</option>
+            </select>
+
+            <label for="room">Room Required:</label>
+            <select id="room" name="room" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <button type="submit" onclick="submitRSVP($event)">Submit RSVP</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 Smita & Amrendra's Wedding</p>
+        <p>&copy; 2025 Smita & Amrendra's Wedding</p>
     </footer>
 
     <!-- Modal for Gallery Lightbox -->
@@ -113,4 +153,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

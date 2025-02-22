@@ -50,7 +50,8 @@ document.getElementById("rsvpForm").addEventListener("submit", function (event) 
     fetch(formURL, { method: "GET", mode: "no-cors" })
         .then(() => {
             alert("🎉 RSVP Submitted Successfully!");
-            window.location.href = "thank-you.html"; // Redirect after submission
+            window.location.reload();
+
         })
         .catch(error => {
             console.error("❌ Submission failed:", error);

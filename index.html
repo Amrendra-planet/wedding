@@ -9,7 +9,7 @@
     <audio id="wedding-music" autoplay loop>
         <!-- <source src="./Nils Frahm - You.mp3" type="audio/mpeg"> -->
     </audio>
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -100,28 +100,28 @@
         <h2>RSVP</h2>
         <form id="rsvpForm">
             <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" maxlength="20" required>
-
+            <input type="text" id="name" name="name" required>
+    
             <label for="number">Mobile Number:</label>
-            <input type="number" id="number" name="number" maxlength="10" required>
-
+            <input type="number" id="number" name="number" required>
+    
             <label for="guests">Number of Guests:</label>
-            <input type="number" id="guests" name="guests" maxlength="1" required>
-
-            <label for="role">Groom or Bride:</label>
+            <input type="number" id="guests" name="guests" required>
+    
+            <label for="role">Groom or Bride Side:</label>
             <select id="role" name="role" required>
                 <option value="Groom">Groom</option>
                 <option value="Bride">Bride</option>
             </select>
-
+    
             <label for="room">Room Required:</label>
             <select id="room" name="room" required>
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
             </select>
-
-            <button type="submit" onclick="submitRSVP($event)">Submit RSVP</button>
+    
+            <button type="submit">Submit RSVP</button>
         </form>
     </section>
 
@@ -151,7 +151,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

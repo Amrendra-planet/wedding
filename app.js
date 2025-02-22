@@ -1,4 +1,4 @@
- 
+
 
 // Modal Gallery
 function openModal() {
@@ -31,38 +31,33 @@ function showSlides(n) {
 }
 
 
-function submitRSVP(event) {
-    event.preventDefault();
-    const formData = {
-        name: document.getElementById("name").value,
-        number: document.getElementById("number").value,
-        guests: document.getElementById("guests").value,
-        role: document.getElementById("role").value,
-        room: document.getElementById("room").value
-    };
+document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
 
-    // Replace with your Google Form's entry IDs
-    // https://docs.google.com/forms/d/e/1FAIpQLSdIThbj6Opx3WcUiJKl7pn8WgsvOkbN4cKH08CBtsINRVlU0g/viewform?usp=pp_url&entry.1088334299=Amrendra&entry.545143636=9169100123&entry.1231216061=2&entry.865025705=Bride&entry.1884059398=0
     let googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSdIThbj6Opx3WcUiJKl7pn8WgsvOkbN4cKH08CBtsINRVlU0g/formResponse";
-    
-    const formDataEncoded = new URLSearchParams({
-        "entry.1088334299": formData.name,
-        "entry.545143636": formData.number,
-        "entry.1231216061": formData.guests,
-        "entry.865025705": formData.role,
-        "entry.1884059398": formData.room
-    });
 
-    fetch(googleFormURL, {
-        method: "POST",
-        body: formDataEncoded,
+    // Creating FormData object
+    let formData = new FormData();
+    formData.append("entry.1088334299", document.getElementById("name").value);
+    formData.append("entry.545143636", document.getElementById("number").value);
+    formData.append("entry.1231216061", document.getElementById("guests").value);
+    formData.append("entry.865025705", document.getElementById("role").value);
+    formData.append("entry.1884059398", document.getElementById("room").value);
+
+    // Using Axios to submit the form data
+    axios.post(googleFormURL, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
         mode: "no-cors"
-    }).then(() => {
-        alert("RSVP Submitted Successfully!");
+    })
+    .then(() => {
+        alert("🎉 RSVP Submitted Successfully!");
         window.location.href = "thank-you.html"; // Redirect after submission
+    })
+    .catch(error => {
+        console.error("❌ Submission failed:", error);
+        alert("⚠️ Submission failed. Please try again.");
     });
-    
-}
+});
 
 
 // Countdown Timer
